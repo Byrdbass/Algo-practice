@@ -12,35 +12,36 @@
 // if the string includes the letters 'PM' i will need to add 12 to the number
 
 function timeConvert() {
-    let currentTime = '10:12:59PM'
+    let s = '07:05:45PM'
     // I will need to make everything to lower case for processing
-    let lowerCaseTime = currentTime.toLowerCase()
+    let lowerCaseTime = s.toLowerCase()
     //console.log(lowerCaseTime)
 
     //need to split the string to make all values an array for correct data structure
-    let [hours, minutes, secondsMod] = currentTime.split(':');
-    seconds = secondsMod.replace(/w/g,'')
-    console.log(hours, minutes, seconds)
+    let [hours, minutes, secondsMod] = s.split(':');
+    //console.log(secondsMod)
+    let seconds = secondsMod.slice(0,2)
+    //console.log(hours, minutes, seconds)
     if (hours === '12' && lowerCaseTime.includes('a')) {
-        console.log('the time is 00 hours military time')
+        //console.log('the time is 00 hours military time')
         hours = '00'
     }
-    console.log(hours)
+    //console.log(hours)
     //find the placement of the letter P or A in the string
     // an if statement to check for 3 versions of the time - doing a different way because .includes method is not reading the split time correctly
     // if the time includes a p for PM
     if (lowerCaseTime.includes('p') && hours != 12) {
         let isTimePM = true
-        console.log(`the time is PM ${isTimePM}`)
+        //console.log(`the time is PM ${isTimePM}`)
         hours = parseInt(hours, 10) + 12
     }
     
     else {
         let isTimeAM = true
-        console.log(`the time is AM ${isTimeAM}`)
+        //console.log(`the time is AM ${isTimeAM}`)
     }
     
-    console.log(`${hours}:${minutes}:${seconds}`)
+    return `${hours}:${minutes}:${seconds}`
 }
 
 
