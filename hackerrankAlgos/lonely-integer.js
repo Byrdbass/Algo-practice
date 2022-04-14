@@ -7,11 +7,13 @@ function lonelyinteger() {
     let a = [1,2,3,4,3,2,1]
     // use spread operator to make copy of the values in the array
     let arr = [...a]
-    console.log(arr)
-    console.log(arr.forEach())
+    const isUnique = arr.findIndex(x => a[x] != arr[x])
+    console.log(isUnique)
+    //console.log(arr.forEach())
     // loop through the array and compare the values to original array
-    for (i=0;i<arr.length;i++)
+    for (i=0;i<=a.length;i++)
     {
+        console.log(index1)
         //now we have the index of the copied array
         // create a variable to compare
         // let isEqual = arr.splice(arr[i] === a.forEach())
