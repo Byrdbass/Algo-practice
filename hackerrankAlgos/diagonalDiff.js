@@ -14,7 +14,8 @@ const diagonalDiff = (arr) => {
     }
     //console.log(str.split(''))
     let strSplit = str.split('')
-    console.log(strSplit.slice(0, 4))
+    console.log(strSplit.slice(len-len, 1))
+    console.log(strSplit).slice(len+2,1)
 }
 const arr = [[1,2,3],[4,5,6],[7,8,9]]
 
