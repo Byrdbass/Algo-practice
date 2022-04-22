@@ -3,21 +3,19 @@
 
 const totalProduct = (array) => {
     let len = array.length;
-    for (let i=0;i<len;i++) {
+    let result = 1
+    for (let i = 0; i < len; i++) {
         let subArray = array[i]
         let len2= subArray.length
-        console.log(len2)
-        for (j=0;j<len2;j++) {
-
-            console.log(subArray)   
-            const result = subArray.reduce((total, j) => total * j, 1)
-            console.log(result)
-            return result
-        }
-        
+        //console.log(len2)
+        for (let j=0;j<len2;j++) {
+            result *= subArray[j] 
+            //result = subArray.reduce((total, j, i, array) => total * j, 1)
+            //console.log(result)
+            
+        }   
     }
-
-    
+    return result
 }
 
 let array1 = [
