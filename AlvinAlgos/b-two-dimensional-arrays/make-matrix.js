@@ -3,8 +3,10 @@
 const makeMatrix = (m, n, value) => {
     let matrix = []
     for (let i = 0; i < m ; i++) {
+        //creates m number of rows
         let row = []
         for( let j=0; j< n; j++) {
+            //creates n number of columns with value = value
             row.push(value)
         }
         matrix.push(row)
