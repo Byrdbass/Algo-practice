@@ -22,7 +22,7 @@ var multiply = function(num1, num2) {
 var divide = function(num1, num2) {
     var quotient = num1/num2
     console.log(quotient)
-    return divide
+    return quotient
 };
 
 num1 = 5;
