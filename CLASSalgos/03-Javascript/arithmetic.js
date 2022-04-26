@@ -3,21 +3,26 @@
 var add = function(num1, num2) {
     var sum = num1 + num2
     console.log(sum)
+    return sum
+    
 };
 
 var subtract = function(num1, num2) {
     var diff = Math.abs(num1 - num2)
     console.log(diff)
+    return diff
 };
 
 var multiply = function(num1, num2) {
     var product = num1 * num2
     console.log(product)
+    return product
 };
 
 var divide = function(num1, num2) {
     var quotient = num1/num2
     console.log(quotient)
+    return quotient
 };
 
 num1 = 5;
@@ -34,3 +39,5 @@ add(num3, num4);
 subtract(num3, num4);
 multiply(num3, num4);
 divide(num3, num4);
+
+module.exports = {add, subtract, multiply, divide}
