@@ -14,11 +14,10 @@ const countingSort = (arr) => {
         let value = 0
         emptyArr.push(i * value)
     }
-    console.log(emptyArr)
-    
-    let sortedArr = range*(emptyArr.push())
-    console.log(minVal, maxVal, range,sortedArr)
-    for (i=0;i<len;i++) {
+    console.log(minVal, maxVal, range, emptyArr)
+    // we want to loop through the given array and count the number of times each value is present
+    // we need to compare these counts with the emptyArr and assign them to a specific index
+    for (let i=0;i<len;i++) {
 
     }
 
@@ -26,7 +25,7 @@ const countingSort = (arr) => {
 
 
 
-    return sortedArr;
+    //return sortedArr;
 }
 
 array = [1,1,1,4,4,5,7]
