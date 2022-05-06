@@ -1,3 +1,5 @@
+
+// AN ARRAY OF OBJECTS
 let array = [
     { key: 1, value: 'blank', condition: true },
     { key: 3, value: 'blank2', condition: false },
@@ -12,3 +14,4 @@ const arrayToObject1 = (arr, key) => {
         return obj
     }, {})
 }
+console.log(arrayToObject1(array));
