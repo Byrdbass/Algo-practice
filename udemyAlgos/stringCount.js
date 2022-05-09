@@ -27,19 +27,29 @@ function charCount(str) {
         // if the number/letter is a key in object, add one to count
         // if the number/letter is not in object, add it and set value to 1
         // IF THE CHARACTER IS SOMETHING ELSE (SPACE, PERIOD, ETC.) DON'T DO ANYTHING
+    
     let split = str.split('')
     console.log(split)
-    let len = split.length
-    console.log(len)
-    let count = 0;
-    for (i=0; i<len; i++) {
 
+    let len = split.length
+    //console.log(len)
+    //let count = 0;
+    let result = {};
+    for (i=0; i<len; i++) {
+        let char = split[i].toLowerCase()
+        console.log(char)
+        if (result[char] > 0) {
+            result[char]++;
+            console.log(char)
+        } else {
+            result[char] = 1
+        }
     }
 
      
-    let answer = {};
-    return answer;
+
+    return result;
 }
 
-let str1 = 'aaaa'
-charCount(str1);
+let str1 = 'aaabbbccc'
+console.log(charCount(str1));
