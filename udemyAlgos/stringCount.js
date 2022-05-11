@@ -29,7 +29,7 @@ function charCount(str) {
         // IF THE CHARACTER IS SOMETHING ELSE (SPACE, PERIOD, ETC.) DON'T DO ANYTHING
     
     let split = str.split('')
-    console.log(split)
+    //console.log(split)
 
     let len = split.length
     //console.log(len)
@@ -40,7 +40,7 @@ function charCount(str) {
         console.log(char)
         if (result[char] > 0) {
             result[char]++;
-            console.log(char)
+            //console.log(char)
         } else {
             result[char] = 1
         }
@@ -51,5 +51,31 @@ function charCount(str) {
     return result;
 }
 
+function charCount2(str) {
+    let result = {}
+    for (let char of str) {
+        char = char.toLowerCase();
+        if (/[a-z0-9]/.test(char)) {
+            result[char] = ++result[char] || 1;
+        }
+    }
+
+    return result;
+}
+
+
+
+
+
 let str1 = 'aaabbbccc'
+
+let start1 = performance.now()
 console.log(charCount(str1));
+let end1 = performance.now();
+console.log(end1-start1)
+
+let start2 = performance.now();
+console.log(charCount2(str1));
+let end2 = performance.now();
+console.log(end2-start2)
+
