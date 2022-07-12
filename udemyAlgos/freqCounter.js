@@ -20,22 +20,63 @@ same([1,2,1], [4,4,1]) //false (must be same frequency)
 const arr1 = [1,2,3];
 const arr2 = [4,1,9];
 
+//REFACTORED SOLUTION
+const same2 = (arr1,arr2) =>{
+    if(arr1.length !== arr2.length) {
+        console.log(false)
+        return false;
+    }
+
+    let freqCounter1 = {};
+    let freqCounter2 = {};
+    //val is the same as index here
+    for (let val of arr1){
+        //indexes start at 0 in an array!
+        freqCounter1[val] = (freqCounter1[val]|| 0) +1
+    }
+    for (let val of arr2){
+        freqCounter2[val] = (freqCounter2[val]|| 0) +1
+    }
+    for(let key in freqCounter1) {
+        if(!(key ** 2 in freqCounter2)){
+            console.log(false);
+            return false
+        }
+        if(freqCounter2[key ** 2] !== freqCounter1[key]){
+            console.log(false);
+            return false
+        }
+    }
+    console.log(true);
+    return true
+}
+
+
+//NAIVE SOLUTION
 const same = (arr1, arr2) => {
     let len1 = arr1.length;
     let len2 = arr2.length;
-    if(len1 !== len2)
+    if(len1 !== len2){
+    console.log(false);
     return false
+    }
 
     for(let i = 0; i<len1; i++){
         //what is the index of arr2 where arr[i] is squared?
         let correctIndex = arr2.indexOf(arr1[i] ** 2)
 
-        if(correctIndex === -1)
-        return false
+        if(correctIndex === -1) {
+            console.log(false)
+            return false
+        }
+        
         //removes the number that is squared - BUT WHY?
         // we need to remember which index is squared without duplication
         console.log(arr2);
         arr2.splice(correctIndex,1);
     }
+    console.log(true);
     return true;
 }
+//same(arr1,arr2)
+same2(arr1,arr2)
