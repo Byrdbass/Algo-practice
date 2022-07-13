@@ -1,10 +1,32 @@
 const string1 = "texttwisttime";
 const string2 = "timetwisttext";
 
-function validAnagram(first,second) {
-    if (first.length !== se)
-}
+function validAnagram2(first,second) {
+    if (first.length !== second.length) {
+        console.log(false);
+        return false;
+    }
+    const lookupObj = {};
 
+    for (let i = 0; i< first.length ; i ++) {
+        let key = first[i];
+        // if key/letter exists in the object, increment it, otherwise set to 1
+        lookupObj[key] ? lookupObj[key] += 1 : lookupObj[key] = 1;
+    }
+    for (let i = 0; i <second.length; i++) {
+        let key2 = second[i];
+        // can't find letter or letter is zero then it's not an anagram
+        // if we encounter 0 this if statement will be true - returning false
+        if (!lookupObj[key2]) {
+            console.log(false);
+            return false;
+        }
+        else lookupObj[key2] -= 1;
+    }
+    console.log(true);
+    return true;
+}
+// ATTEMPT WITHOUT HELP
 const validAnagram = (string1, string2) => {
 
     //let s1split = string1.split('');
@@ -49,3 +71,4 @@ const validAnagram = (string1, string2) => {
 }
 
 validAnagram(string1, string2);
+validAnagram2(string1, string2);
