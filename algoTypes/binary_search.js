@@ -7,6 +7,6 @@ let start = performance.now();
 sumUp()
 let end = performance.now();
 let time = end - start;
-//console.log(start);
-//console.log(end)
+console.log(start);
+console.log(end)
 console.log(time)
