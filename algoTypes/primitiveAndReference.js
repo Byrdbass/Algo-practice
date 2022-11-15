@@ -2,8 +2,8 @@
 // we do not have to declare what type of data a variable is assigned to
 // a variable could be a string, number, etc without declaring it as such
 
-/*  PRIMITIVE VALUES
-String
+/*  PRIMITIVE VALUES in javascript
+String (not-primitive in Java)
 Number
 Boolean
 Undefined
@@ -17,7 +17,7 @@ REFERENCE VALUES
 OBJECTS 
     ARRAYS - actually objects themselves
 
-STORED ON THE HEAP!! - takes a bit longer to be accessed but is able to store much more information - better for data that changes more dynamically
+STORED ON THE HEAP!! - takes a bit longer to be accessed but is able to store much more information - better for data that changes more dynamic
 
 
 */
