@@ -36,9 +36,17 @@ public class AddOrMultiplyRuntimes {
 	public static void main(String[] args) {
 		Integer[] arrA = {2,4,6,8};
 		Integer[] arrB = {3,6,9,12,15};
-
+		
+		long startTime = System.nanoTime();
 		Runtimes.addRuntime(arrA, arrB);
+		long endTime = System.nanoTime();
+		
+		long startTime2 = System.nanoTime();
 		Runtimes.mulitplyRuntime(arrA, arrB);
+		long endTime2 = System.nanoTime();
+		
+		System.out.println("add runtime: " + (endTime - startTime));
+		System.out.println("multiply runtime: " + (endTime2 - startTime2));
 
 	}
 
