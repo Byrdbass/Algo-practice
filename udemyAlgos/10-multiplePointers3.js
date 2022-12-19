@@ -34,30 +34,24 @@ function isSubsequence(str1, str2){
     while (startStr2<=endStr2){
         console.log(count);
         console.log(str1split[startStr1]);
-        //console.log(str2split[startStr2]);
+        console.log(str1split[startStr1]===str2split[startStr2]);
         if (str1split[startStr1]===str2split[startStr2]){
             count++;
-            startStr1++;
+            if(startStr1!==endStr1){
+                startStr1++;
+            }
             startStr2++;
         }
-        // else if(str1split[startStr1]!==str2split[startStr2]){
-        //     startStr1++;
-        // }
         else if (count===str1split.length){
             console.log(true);
             return true
         }
-        //THIS DOESN'T WORK
-        else if (startStr1 < startStr2){
-            startStr1++
-        }
-        else if(startStr1 === endStr1){
-            console.log(false);
-            return false
-        }
+        // else if(str1split<endStr1){
+        //     console.log(false);
+        //     return false
+        // }
         else{
             startStr2++
-            
         }
 
     }
@@ -66,7 +60,7 @@ function isSubsequence(str1, str2){
 
 }
 
-isSubsequence('hello', 'hello world'); // true
-//isSubsequence('sing', 'sting'); // true
+//isSubsequence('hello', 'hello world'); // true
+isSubsequence('sing', 'sting'); // true
 //isSubsequence('abc', 'abracadabra'); // true
 //isSubsequence('abc', 'acb'); // false (order matters)
