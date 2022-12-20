@@ -30,11 +30,30 @@ public class LogNRuntime {
 		}
 		//System.out.println(index);
 	}
+	
+	Integer recursiveBinSearch(Integer[] sortedArr, Integer low, Integer high, Integer key) {
+		if (high>=1) {
+			Integer mid = low + (high-1)/2;
+			
+			if(sortedArr[mid]==key) {
+				return mid;
+			}
+			if(sortedArr[mid]> key) {
+				return recursiveBinSearch(sortedArr, low, high-1, key);
+			}
+			return recursiveBinSearch(sortedArr, mid+1, high, key);
+		}
+		return -1;
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Integer[] arr1 = {1,3,5,7,9,11,13};
 		binarySearch(arr1, 4);
+		LogNRuntime ob = new LogNRuntime();
+		Integer result = ob.recursiveBinSearch(arr1, 0, arr1.length-1, 9);
+		if(result ==-1) System.out.println("Element not present");
+		else System.out.println("Element found at index "+result);
 
 	}
 
