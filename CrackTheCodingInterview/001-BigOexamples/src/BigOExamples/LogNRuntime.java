@@ -26,12 +26,11 @@ public class LogNRuntime {
 			else {
 				System.out.println("Not Found");
 			}
-			//System.out.println("there is no element in the array that matches" + key);
 		}
-		//System.out.println(index);
 	}
 	
 	Integer recursiveBinSearch(Integer[] sortedArr, Integer low, Integer high, Integer key) {
+		
 		if (high>=1) {
 			Integer mid = low + (high-1)/2;
 			
