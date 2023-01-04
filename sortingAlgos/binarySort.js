@@ -20,4 +20,5 @@ function binarySearch(arr, key) {
 }
 // test comment
 // test comment2
+// test comment3
 binarySearch([1,3,5,7,9,11,13],9);
