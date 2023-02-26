@@ -22,9 +22,6 @@ const getUniqueValues2 = (array) => (
 )
 console.log('reduce and includes ',getUniqueValues2(array))
 
-const getUniqueValues3 = (array) => (
-    [... new Set(array)]
-)
 console.log('spread new Set ',getUniqueValues3(array))
 
 function lonelyinteger(a) {
@@ -74,5 +71,25 @@ const a = [1,2,3,4,3,2,1]
 //     }
 // }
 //isEqual();
+
+//Hunter's solution
+function findUnique(arr){
+    const holding = {};
+    for (const val of arr){
+        if (holding[val]) holding[val]++;
+        else holding[val] = 1;
+    }
+    console.log(holding);
+    let answer;
+    for ([key, val] of Object.entries(holding)){
+        console.log(key, val);
+
+        if (val == 1) {
+            answer = key;
+            break;
+        }
+    }
+    return answer;
+}
 
 console.log(lonelyinteger(a))
