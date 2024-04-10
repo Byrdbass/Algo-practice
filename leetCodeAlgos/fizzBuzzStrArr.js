@@ -41,7 +41,7 @@ var fizzBuzz = function(n) {
 
 
 
-Code Sample (Runtime: 36ms)
+// Code Sample (Runtime: 36ms)
 
 /**
  * @param {number} n
@@ -68,7 +68,7 @@ var fizzBuzz = function(n) {
 
 
 
-Code Sample (Runtime: 34ms)
+// Code Sample (Runtime: 34ms)
 
 /**
  * @param {number} n
