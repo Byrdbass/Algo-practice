@@ -45,6 +45,14 @@ class SinglyLinkedList {
     
     return lastEl;
   }
+  shift(){
+    if (!this.head) return undefined //or length is 0
+    let temp = this.head;
+    this.head = temp.next;
+    this.length--;
+    if(!this.head) this.tail = null
+    return temp;
+  }
 }
 
 var list = new SinglyLinkedList();
@@ -54,8 +62,12 @@ list.push(2);
 list.push(3);
 list.push(9999);
 
-list.pop();
-list.pop();
-list.pop();
-list.pop();
+// list.pop();
+// list.pop();
+// list.pop();
+// list.pop();
+// list.shift();
+// list.shift();
+// list.shift();
+// list.shift();
 console.log(list)
