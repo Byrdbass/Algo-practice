@@ -76,11 +76,19 @@ class SinglyLinkedList {
         }
         let counter = 0;
         let current = this.head;
-        while (counter !== index ){
+        while (counter !== index) {
             current = current.next;
             counter++;
         }
         return current;
+    }
+    set(val, index) {
+        let foundNode = this.get(index)
+        if (foundNode) {
+            foundNode.val = val;
+            return true;
+        }
+        return false;
     }
 }
 
@@ -91,6 +99,7 @@ list.push(2);
 list.push(3);
 list.push(9999);
 list.unShift(1234);
+list.set("hello", 1)
 
 // list.pop();
 // list.pop();
@@ -100,4 +109,5 @@ list.unShift(1234);
 // list.shift();
 // list.shift();
 // list.shift();
-console.log(list.head.next)
+console.log(list)
+// console.log(list.get(1))
