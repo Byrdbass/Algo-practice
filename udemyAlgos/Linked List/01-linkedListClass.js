@@ -1,4 +1,4 @@
-class Node {
+class ListNode {
     constructor(val) {
         this.val = val;
         this.next = null;
@@ -13,7 +13,7 @@ class SinglyLinkedList {
     }
     //add an element to the end of list
     push(val) {
-        var newNode = new Node(val);
+        var newNode = new ListNode(val);
         if (this.head === null) {
             this.head = newNode;
             this.tail = this.head;
@@ -58,7 +58,7 @@ class SinglyLinkedList {
     }
     //add an element to the beginning
     unShift(val) {
-        let newNode = new Node(val)
+        let newNode = new ListNode(val)
         if (!this.head) {
             this.head = newNode;
             this.tail = newNode;
@@ -90,6 +90,28 @@ class SinglyLinkedList {
         }
         return false;
     }
+    insert(val, index){
+        if (index < 0 || index > this.length){
+            return false
+        }
+        if (index === this.length){
+            return this.push(val)
+        }
+        if (index === 0)
+        {
+            return this.unShift(val)
+        }
+        else{
+            let preNode = this.get(index-1);
+            let newNode = new ListNode(val);
+            let afterNode = preNode.next
+            preNode.next = newNode;
+            newNode.next = afterNode;
+            this.length++
+            return true
+        }
+
+    }
 }
 
 var list = new SinglyLinkedList();
@@ -97,17 +119,8 @@ var list = new SinglyLinkedList();
 list.push(1);
 list.push(2);
 list.push(3);
-list.push(9999);
-list.unShift(1234);
-list.set("hello", 1)
+list.push(4);
+// list.unShift("first");
+// list.set("hello", 1)
 
-// list.pop();
-// list.pop();
-// list.pop();
-// list.pop();
-// list.shift();
-// list.shift();
-// list.shift();
-// list.shift();
 console.log(list)
-// console.log(list.get(1))
