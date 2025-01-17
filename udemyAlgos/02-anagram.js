@@ -8,7 +8,7 @@ function validAnagram2(first,second) {
     }
     const lookupObj = {};
 
-    for (let i = 0; i< first.length ; i ++) {
+    for (let i = 0; i< first.length ; i++) {
         let key = first[i];
         // if key/letter exists in the object, increment it, otherwise set to 1
         lookupObj[key] ? lookupObj[key] += 1 : lookupObj[key] = 1;
