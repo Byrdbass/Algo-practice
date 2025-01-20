@@ -2,16 +2,17 @@
 // Assume `num` will be a positive number
 
 var logEvenNums = function (num) {
-    let answer = 0
-    console.log(answer)
-    for (i = 0; i < num/2; i++) {
-        answer += 2
-        console.log(answer)
+
+    for (let i = 0; i <= num; ++i) {
+        if(i % 2 == 0){
+            console.log(i)
+        }
+
     }
     
     //return answer
 };
 
-let num1 = 10;
+logEvenNums(10)
 
-console.log(logEvenNums(num1));
+
