@@ -14,3 +14,9 @@ var productOfLargestTwo = function(arr) {
     };
     return max1 * max2
 };
+
+var productOfLargestTwo2 = function(arr) {
+    if (arr.length < 2) return null; // Handle edge case for arrays with fewer than 2 elements
+    arr.sort((a, b) => b - a); // Sort in descending order
+    return arr[0] * arr[1];    // Multiply the two largest elements
+};
