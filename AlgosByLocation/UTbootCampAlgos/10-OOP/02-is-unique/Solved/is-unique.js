@@ -13,6 +13,6 @@ var isUnique = function(arr) {
 
     numMap[currentNumber] = true;
   }
-
+  console.log(numMap)
   return true;
 };
