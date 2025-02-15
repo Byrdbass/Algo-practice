@@ -12,15 +12,37 @@ class Queue{
         this.last = null;
         this.size = 0;
     }
-    push(val){
+    //adding to the end/tail
+    enqueue(val){
         let newNode = new Node(val)
         if (!this.first){
             this.first = newNode;
             this.last = newNode;
         }
         else{
-
+            this.last.next = newNode
+            this.last = newNode
         }
         return ++this.size
     }
+    dequeue(){
+        if (!this.first){
+            return null
+        }
+        let temp = this.first;
+        if (this.first === this.last){
+            this.last = null;
+        }
+        this.first = this.first.next
+        this.size--
+        return temp.val
+    }
 }
+
+let q = new Queue()
+q.enqueue("FIRST IN")
+q.enqueue("FIRST OUT")
+q.enqueue("cue's are equitable")
+q.enqueue("you gotta wait")
+q.dequeue()
+console.log(q)
